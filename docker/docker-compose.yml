@@ -15,6 +15,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - stack.env
+    environment:
+      REDIS_HOSTNAME: immich-redis
+      DB_HOSTNAME: immich_postgres
     depends_on:
       - immich_postgres
       - immich-redis
