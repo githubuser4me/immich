@@ -17,7 +17,7 @@ services:
       - stack.env
     depends_on:
       - immich_postgres
-      - immich_redis
+      - immich-redis
     restart: always
     networks:
       - immich-net
