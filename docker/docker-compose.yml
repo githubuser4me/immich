@@ -46,4 +46,16 @@ services:
     volumes:
       - immich_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-S]()
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: always
+    networks:
+      - immich-net
+
+volumes:
+  immich_pgdata:
+
+networks:
+  immich-net:
