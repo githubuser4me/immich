@@ -12,7 +12,7 @@ services:
       - /share/ZFS21_DATA/immich/upload/library:/external/onedrive:ro
       - /etc/localtime:/etc/localtime:ro
     env_file:
-      - //docker/stack.env
+      - ./docker/stack.env
     depends_on:
       - redis
       - database
